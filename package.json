@@ -1,0 +1,19 @@
+{
+  "name": "a04-wdtaylor30",
+  "version": "1.0.0",
+  "description": "COMP 426 assignment 4.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a04-wdtaylor30.git"
+  },
+  "author": "William D. Taylor",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a04-wdtaylor30/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a04-wdtaylor30#readme"
+}
