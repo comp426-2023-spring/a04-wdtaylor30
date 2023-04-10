@@ -1,11 +1,8 @@
 const express = require('express');
+const rps = require('a03-wdtaylor30');
 
 // use body parser to parse
 const bodyParser = require('body-parser');
-
-// load a03 packages
-const rps = require('./lib/rps-cli');
-const rpsls = require('./lib/rpsls-cli');
 
 const app = express();
 
