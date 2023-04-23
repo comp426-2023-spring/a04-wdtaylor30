@@ -1,7 +1,7 @@
 const express = require('express');
 
 // TODO: This doesn't work... fix it. AGTG.
-const rps = require('a03-wdtaylor30');
+const rps = require('node-rpsls');
 
 // use body parser to parse
 const bodyParser = require('body-parser');
