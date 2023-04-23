@@ -18,6 +18,6 @@
   "homepage": "https://github.com/comp426-2023-spring/a04-wdtaylor30#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "node-rpsls": "file:../a03-wdtaylor30/node-rpsls-1.0.0.tgz"
+    "rpsls": "file:../a03-wdtaylor30/rpsls.js"
   }
 }
