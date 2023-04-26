@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import express from 'express';
 
-import { rps, rpsls } from './lib/rpsls.js';
+import { playRPS, playRPSLS } from './lib/rpsls.js';
 
 // use body parser to parse
 const app = express();
@@ -23,38 +23,38 @@ app.get('/app', (req, res) => {
 });
 
 // rps endpoint
-app.get('/app/rps', (req, res) => {
+app.get('/app/playRPS', (req, res) => {
     res.status(200).send({player: '(rock|paper|scissors'});
 });
 
 // rpsls endpoint
-app.get('/app/rpsls', (req, res) => {
+app.get('/app/playRPSLS', (req, res) => {
     res.status(200).send({player: '(rock|paper|scisors|lizard|spock)'});
 });
 
 // play rps endpoint
-app.post('/app/rps/play', (req, res) => {
+app.post('/app/playRPS/play', (req, res) => {
     const shot = req.body.shot;
     const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rpsls endpoint
-app.post('/app/rps/play', (req, res) => {
+app.post('/app/playRPSLS/play', (req, res) => {
     const shot = req.body.shot;
     const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rps w params
-app.get('/app/rps/play/:shot', (req, res) => {
+app.get('/app/playRPS/play/:shot', (req, res) => {
     const shot = req.params.shot;
     const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rpsls w params
-app.get('/app/rpsls/play/:shot', (req, res) => {
+app.get('/app/playRPSLS/play/:shot', (req, res) => {
     const shot = req.params.shot;
     const result = _play(shot);
     res.status(200).send(result);
