@@ -1,15 +1,13 @@
 #!/usr/bin/env node
-import express from "express";
+import express from 'express';
 
-import { rps, rpsls } from "./lib/rpsls.js";
+import { rps, rpsls } from './lib/rpsls.js';
 
 // use body parser to parse
-import { urlencoded, json } from 'body-parser';
-
 const app = express();
 
-app.use(urlencoded({extended: true}));
-app.use(json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // set port to 5000 by default or port given by user
 const port = process.argv.slice(2)[0] || 5000;
