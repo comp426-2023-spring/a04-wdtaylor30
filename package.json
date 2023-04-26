@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "COMP 426 assignment 4.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "node server.js --port=5555"
   },

@@ -1,7 +1,7 @@
 import express from 'express';
 
-import { rps } from './lib/bin/rps';
-import { rpsls } from './lib/bin/rpsls';
+import rps from './lib/bin/rps';
+import rpsls from './lib/bin/rpsls';
 
 // use body parser to parse
 import { urlencoded, json } from 'body-parser';
