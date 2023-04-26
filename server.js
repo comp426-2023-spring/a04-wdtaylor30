@@ -1,14 +1,15 @@
-const express = require('express');
+import express from 'express';
 
-const rpsls = require('./lib/rpsls');
+import { rps } from './lib/bin/rps';
+import { rpsls } from './lib/bin/rpsls';
 
 // use body parser to parse
-const bodyParser = require('body-parser');
+import { urlencoded, json } from 'body-parser';
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(urlencoded({extended: true}));
+app.use(json());
 
 // set port to 5000 by default or port given by user
 const port = process.argv.slice(2)[0] || 5000;
@@ -36,28 +37,28 @@ app.get('/app/rpsls', (req, res) => {
 // play rps endpoint
 app.post('/app/rps/play', (req, res) => {
     const shot = req.body.shot;
-    const result = rps.play(shot);
+    const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rpsls endpoint
 app.post('/app/rps/play', (req, res) => {
     const shot = req.body.shot;
-    const result = rps.play(shot);
+    const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rps w params
 app.get('/app/rps/play/:shot', (req, res) => {
     const shot = req.params.shot;
-    const result = rps.play(shot);
+    const result = play(shot);
     res.status(200).send(result);
 });
 
 // play rpsls w params
 app.get('/app/rpsls/play/:shot', (req, res) => {
     const shot = req.params.shot;
-    const result = rpsls.play(shot);
+    const result = _play(shot);
     res.status(200).send(result);
 });
 
