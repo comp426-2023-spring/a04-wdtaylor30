@@ -1,7 +1,6 @@
 const express = require('express');
 
-// TODO: This doesn't work... fix it. AGTG.
-const rps = require('rpsls');
+const rpsls = require('./lib/rpsls');
 
 // use body parser to parse
 const bodyParser = require('body-parser');
