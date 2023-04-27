@@ -39,13 +39,13 @@ app.post('/app/rpsls/play', (req, res) => {
 });
 
 // play rps -> JSON
-app.get('/app/rps/play/', (req, res) => {
-    res.status(200).json(playRPS(req.body.shot));
+app.post('/app/rps/play/', (req, res) => {
+    res.status(200).send(playRPS(req.body.shot));
 });
 
 // play rpsls -> JSON
-app.get('/app/rpsls/play/', (req, res) => {
-    res.status(200).json(playRPSLS(req.body.shot));
+app.post('/app/rpsls/play/', (req, res) => {
+    res.status(200).send(playRPSLS(req.body.shot));
 });
 
 // play rps -> parameter
