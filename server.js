@@ -29,23 +29,23 @@ app.get('/app/rpsls', (req, res) => {
 });
 
 // play rps endpoint -> URL
-app.post('/app/rps/play', (req, res) => {
+app.get('/app/rps/play', (req, res) => {
     res.status(200).send(playRPS(req.query.shot));
 });
 
 // play rpsls endpoint -> URL
-app.post('/app/rpsls/play', (req, res) => {
+app.get('/app/rpsls/play', (req, res) => {
     res.status(200).send(playRPSLS(req.query.shot));
 });
 
 // play rps -> JSON
 app.post('/app/rps/play/', (req, res) => {
-    res.status(200).send(playRPS(req.body.shot));
+    res.status(200).send(playRPS(req.body.shot) + "\n");
 });
 
 // play rpsls -> JSON
 app.post('/app/rpsls/play/', (req, res) => {
-    res.status(200).send(playRPSLS(req.body.shot));
+    res.status(200).send(playRPSLS(req.body.shot) + "\n");
 });
 
 // play rps -> parameter
