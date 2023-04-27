@@ -40,12 +40,16 @@ app.get('/app/rpsls/play', (req, res) => {
 
 // play rps -> JSON
 app.post('/app/rps/play/', (req, res) => {
-    res.status(200).send(playRPS(req.body.shot) + "\n");
+    const result = playRPS(req.body.shot);
+    const responseString = result + "%0A";
+    res.status(200).send(responseString);
 });
 
 // play rpsls -> JSON
 app.post('/app/rpsls/play/', (req, res) => {
-    res.status(200).send(playRPSLS(req.body.shot) + "\n");
+    const result = playRPSLS(req.body.shot);
+    const responseString = result + "%0A";
+    res.status(200).send(responseString);
 });
 
 // play rps -> parameter
