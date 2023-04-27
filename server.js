@@ -42,14 +42,14 @@ app.post('/app/rpsls/play', (req, res) => {
 });
 
 // play rps w params
-app.get('/app/rps/play/:shot', (req, res) => {
+app.get('/app/rps/play/(rock|paper|scissors)', (req, res) => {
     const shot = req.params.shot;
     const result = playRPS(shot);
     res.status(200).send(result);
 });
 
 // play rpsls w params
-app.get('/app/rpsls/play/:shot', (req, res) => {
+app.get('/app/rpsls/play/(rock|paper|scissors|lizard|spock)', (req, res) => {
     const shot = req.params.shot;
     const result = playRPSLS(shot);
     res.status(200).send(result);
@@ -57,7 +57,7 @@ app.get('/app/rpsls/play/:shot', (req, res) => {
 
 // default endpoint
 app.all('*', (req, res) => {
-    res.status(404).send('404 Not Found').end();
+    res.status(404).send('404 NOT FOUND').end();
 });
 
 // listen on given port
