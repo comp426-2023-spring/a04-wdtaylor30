@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// TODO: Almost finished. Read the errors and correct. Keep fighting. AGTG.
 import express from 'express';
 import minimist from 'minimist';
 
@@ -39,12 +40,12 @@ app.post('/app/rpsls/play', (req, res) => {
 
 // play rps -> JSON
 app.get('/app/rps/play/', (req, res) => {
-    res.status(200).send(playRPS(req.body.shot));
+    res.status(200).json(playRPS(req.body.shot));
 });
 
 // play rpsls -> JSON
 app.get('/app/rpsls/play/', (req, res) => {
-    res.status(200).send(playRPSLS(req.body.shot));
+    res.status(200).json(playRPSLS(req.body.shot));
 });
 
 // play rps -> parameter
