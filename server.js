@@ -1,21 +1,16 @@
 #!/usr/bin/env node
 import express from 'express';
+import minimist from 'minimist';
 
 import { playRPS, playRPSLS } from './lib/rpsls.js';
 
-// use body parser to parse
 const app = express();
-
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // set port to 5000 by default or port given by user
-const port = process.argv.slice(2)[0] || 5000;
-
-// default endpoint
-app.all('*', (req, res) => {
-    res.status(404).send('404 Not Found').end();
-});
+var argv = minimist(process.argv.slice(2));
+const port = argv.port|| 5000;
 
 // check endpoints
 app.get('/app', (req, res) => {
@@ -58,6 +53,11 @@ app.get('/app/playRPSLS/play/:shot', (req, res) => {
     const shot = req.params.shot;
     const result = _play(shot);
     res.status(200).send(result);
+});
+
+// default endpoint
+app.all('*', (req, res) => {
+    res.status(404).send('404 Not Found').end();
 });
 
 // listen on given port
