@@ -13,23 +13,23 @@ app.use(express.json());
 const port = process.argv.slice(2)[0] || 5000;
 
 // default endpoint
-app.use((req, res) => {
-    res.status(404).send({error: 'Endpoint not found'});
+app.get('*', (req, res) => {
+    res.status(404).send('404 Not Found');
 });
 
 // check endpoints
 app.get('/app', (req, res) => {
-    res.status(200).send({message: 'Endpoint /app/ is working'});
+    res.status(200).send({'200 OK'});
 });
 
 // rps endpoint
 app.get('/app/playRPS', (req, res) => {
-    res.status(200).send({player: '(rock|paper|scissors'});
+    res.status(200).send(playRPS());
 });
 
 // rpsls endpoint
 app.get('/app/playRPSLS', (req, res) => {
-    res.status(200).send({player: '(rock|paper|scisors|lizard|spock)'});
+    res.status(200).send(playRPSLS());
 });
 
 // play rps endpoint
