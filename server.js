@@ -19,7 +19,7 @@ app.get('*', (req, res) => {
 
 // check endpoints
 app.get('/app', (req, res) => {
-    res.status(200).send({'200 OK'});
+    res.status(200).send('200 OK');
 });
 
 // rps endpoint
