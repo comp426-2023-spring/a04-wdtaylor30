@@ -13,8 +13,8 @@ app.use(express.json());
 const port = process.argv.slice(2)[0] || 5000;
 
 // default endpoint
-app.get('*', (req, res) => {
-    res.status(404).send('404 Not Found');
+app.all('*', (req, res) => {
+    res.status(404).send('404 Not Found').end();
 });
 
 // check endpoints
