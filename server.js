@@ -27,32 +27,34 @@ app.get('/app/rpsls', (req, res) => {
     res.status(200).send({"player":"(rock|paper|scissors|lizard|spock)"});
 });
 
-// play rps endpoint
+// play rps endpoint -> URL
 app.post('/app/rps/play', (req, res) => {
-    const shot = req.body.shot;
-    const result = playRPS(shot);
-    res.status(200).send(result);
+    res.status(200).send(playRPS(req.query.shot));
 });
 
-// play rpsls endpoint
+// play rpsls endpoint -> URL
 app.post('/app/rpsls/play', (req, res) => {
-    const shot = req.body.shot;
-    const result = playRPSLS(shot);
-    res.status(200).send(result);
+    res.status(200).send(playRPSLS(req.query.shot));
 });
 
-// play rps w params
-app.get('/app/rps/play/(rock|paper|scissors)', (req, res) => {
-    const shot = req.params.shot;
-    const result = playRPS(shot);
-    res.status(200).send(result);
+// play rps -> JSON
+app.get('/app/rps/play/', (req, res) => {
+    res.status(200).send(playRPS(req.body.shot));
 });
 
-// play rpsls w params
-app.get('/app/rpsls/play/(rock|paper|scissors|lizard|spock)', (req, res) => {
-    const shot = req.params.shot;
-    const result = playRPSLS(shot);
-    res.status(200).send(result);
+// play rpsls -> JSON
+app.get('/app/rpsls/play/', (req, res) => {
+    res.status(200).send(playRPSLS(req.body.shot));
+});
+
+// play rps -> parameter
+app.get('/app/rps/play/:shot', (req, res) => {
+    res.status(200).send(playRPS(req.params.shot));
+});
+
+// play rpsls -> parameter
+app.get('/app/rpsls/play/:shot', (req, res) => {
+    res.status(200).send(playRPSLS(req.params.shot));
 });
 
 // default endpoint
