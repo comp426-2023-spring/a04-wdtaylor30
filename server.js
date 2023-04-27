@@ -20,12 +20,12 @@ app.get('/app', (req, res) => {
 
 // rps endpoint
 app.get('/app/rps', (req, res) => {
-    res.status(200).send({"player":"(rock|paper|scissors)"});
+    res.status(200).send(playRPS());
 });
 
 // rpsls endpoint
 app.get('/app/rpsls', (req, res) => {
-    res.status(200).send({"player":"(rock|paper|scissors|lizard|spock)"});
+    res.status(200).send(playRPSLS());
 });
 
 // play rps endpoint -> URL
